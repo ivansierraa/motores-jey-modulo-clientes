@@ -1,0 +1,11 @@
+# Compilación de Maven
+target/
+
+# Configuración local con la contraseña (se sube solo el .ejemplo)
+src/main/resources/db.properties
+
+# Archivos del IDE
+nbproject/private/
+.idea/
+.vscode/
+*.iml
