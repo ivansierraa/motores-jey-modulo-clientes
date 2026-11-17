@@ -1,16 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.yiesoftware.motoresjey;
 
+import com.yiesoftware.motoresjey.conexion.ConexionBD;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 /**
+ * Punto de entrada del módulo Gestión de Clientes.
  *
- * @author ivans
+ * @author Iván Sierra
  */
 public class Principal {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        try (Connection conexion = ConexionBD.obtenerConexion()) {
+            System.out.println("Conectado a: " + conexion.getCatalog());
+        } catch (SQLException e) {
+            System.out.println("No se pudo conectar: " + e.getMessage());
+        }
     }
 }
